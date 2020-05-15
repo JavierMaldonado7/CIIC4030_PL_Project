@@ -9,10 +9,6 @@ reserved_words = {
 
     'start': 'START',
 
-    'makeWindow': 'MAKEWINDOW',
-
-    'switch': 'SWITCH',
-
     'background':'BACKGROUND',
 
     'check': 'CHECK',

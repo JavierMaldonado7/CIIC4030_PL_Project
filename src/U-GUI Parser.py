@@ -27,25 +27,6 @@ def p_stunWarning(p):
     return 0
 
 
-#Function for switching windows
-def p_switch(p):
-    'expression : SWITCH CURL_L NUMBER CURL_R'
-    #try:
-       # gui.switchWin(p[3])
-   # finally:
-
-       # if(-1< p[3] <= len(gui.windows)):
-          #  p[0] = 'Switched'
-       # else:
-          #  p[0] = "Switched fail(Out of bounds)"
-
-
-#function to create an initial window or add a new one to the collection
-def p_make_window(p):
-    'expression : MAKEWINDOW'
-    gui.createFrame()
-    p[0] = "Window created", gui.currentFrame
-
 #function to check the current status of the Window being made
 def p_check(p):
     'expression : CHECK'
