@@ -13,8 +13,6 @@ reserved_words = {
 
     'check': 'CHECK',
 
-    'button': 'BUTTON',
-
     'oval': 'OVAL',
 
     'square': 'SQUARE',

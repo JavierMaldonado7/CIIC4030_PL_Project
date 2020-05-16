@@ -57,14 +57,6 @@ def p_UpdateLabel(p):
         gui.App.addLabel(gui.App,p[4],p[6], name, color,p[8])
         p[0] = colored('Label was updated! Named'+' '+name,'red')
 
-# BUTTONS------------------------------------------------------
-def p_CreateButton(p):
-    'expression : BUTTON  CURL_L NUMBER COMMA NUMBER COMMA NUMBER COMMA NUMBER CURL_R'
-    if checkInit(p):
-        name = input("Enter Button name: ")
-        gui.App.createButton(gui.App,p[3],p[5],p[7],p[9], name,gui.App.getTop())
-        p[0] = colored('Button was made! Named'+' '+name,'red')
-
 #SHAPES FOR GUI--------------------------------------------------
 def p_CreateCircle(p):
     'expression : OVAL CURL_L NUMBER COMMA NUMBER COMMA NUMBER COMMA NUMBER CURL_R'
@@ -167,15 +159,23 @@ def checkInit(p):
         return False
 
 
-parser = yacc.yacc()
+parse = yacc.yacc()
 
 
 while True:
+
     try:
+
         s = input(colored('U-GUI::= ', 'blue'))
+
         s.lower()
+
     except EOFError:
+
         break
+
     if not s: continue
-    result = parser.parse(s)
+
+    result = parse.parse(s)
+
     print(result)

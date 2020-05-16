@@ -3,10 +3,6 @@ import tkinter as tk
 currentFrame = -1
 windowWidth = 500
 windowHeight = 500
-frameImages = []
-buttons = []
-buttonsX = []
-buttonsY = []
 #--------OVAL DICTIONARY--------------------
 ovals = {}
 
@@ -280,7 +276,6 @@ class App(tk.Frame):
         self.canvasView = None
         self.frames.append(initialFrame)
         self.currentFrame = 0
-        self.init_Buttons()
         self.top = parent
         self.makeWindow(0,self.top)
         self.bgColor = 'white'
@@ -345,24 +340,6 @@ class App(tk.Frame):
 
 # --------------------------------------------------------------------
 
-
-
-    def init_Buttons(self):
-
-        for x in buttons:
-
-            x.pack()
-
-
-    def createButton(self, width, height, xpos, ypos,text,top):
-        button = tk.Button(self.top, text = text)
-
-        button.width = width
-        button.height = height
-        buttons.append(button)
-        buttonsX.append(xpos)
-        buttonsY.append(ypos)
-
     def loadFrame(self, index):
         self.currentFrame = index
         self.canvasView = self.frames[index].getCanvas(self.parent)
@@ -378,7 +355,6 @@ class App(tk.Frame):
         self.canvasView = self.frames[index].getCanvas(self.parent,self.top)
 
         self.generateShapes(self.canvasView)
-
 
         self.canvasView.pack()
 
@@ -415,7 +391,6 @@ def makeCanvas():
     root.resizable(False, False)
     app = App(root, windows[currentFrame])
     root.configure(background = bgColor)
-    app.init_Buttons()
     app.pack()
     app.update_idletasks()
     root.attributes('-topmost', True)
