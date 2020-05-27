@@ -32,6 +32,10 @@ U-GUI utilizes the lexer.py module and U-GUI Parser.py. U-GUI Parser.py is the m
 - reset - gives you the option to delete all or a certain type of shape.
 - label(x, y, size) - creates a text label with the text you input and with the attributes declared.
 
+## VIDEOS
+- Comercial video : https://youtu.be/YuGE9gfg9rA
+- Demonstration video : https://youtu.be/ZNhs1N1_VuY
+
 
 
 
